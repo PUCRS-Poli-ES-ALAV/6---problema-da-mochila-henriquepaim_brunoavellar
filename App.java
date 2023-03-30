@@ -3,12 +3,12 @@ public class App {
     public static void main(String args[]) {
 
         int valTeste = 4; //4 - 8 - 16 - 32
-        int vetTeste[] = {};
+        int[] vetTeste = new int[33];
 
         System.out.println(fiboRec(valTeste));
         System.out.println(fibo(valTeste));
         System.out.println(fiboMem(vetTeste, valTeste));
-        System.out.println(fiboLookUp(vetTeste, valTeste));
+        
 
     }
 
