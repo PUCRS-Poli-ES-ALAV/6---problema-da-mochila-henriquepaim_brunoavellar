@@ -1,21 +1,27 @@
 import java.util.ArrayList;
 
-public class App {
+public class App extends Methods{
 
     public static void main(String args[]) {
 
-        int valTeste = 4; //Teste para todos com tamanho: 4, 8, 16, 32 e para fibo e fiboMem com as variáveis 128, 1000, 10.000
-        long[] vetTeste = new long[33];
+        // int valTeste = 4; //Teste para todos com tamanho: 4, 8, 16, 32 e para fibo e fiboMem com as variáveis 128, 1000, 10.000
+        // long[] vetTeste = new long[33];
 
-        System.out.println(fiboRec(valTeste));
-        System.out.println(fibo(valTeste));
-        System.out.println(fiboMem(vetTeste, valTeste));
+        // System.out.println(fiboRec(valTeste));
+        // System.out.println(fibo(valTeste));
+        // System.out.println(fiboMem(vetTeste, valTeste));
 
-        String A = "Mola";
-        String B = "Bola";
+        // String A = "Mola";
+        // String B = "Bola";
 
-        System.out.println(knapsack(7));
-        System.out.println(distDeEdicao(A, B));
+        // System.out.println(knapsack(7));
+        // System.out.println(distDeEdicao(A, B));
+
+        int[] weights = {1, 3, 4, 5};
+        int[] values = {1, 4, 5, 7};
+        int capacity = 7;
+        int result = Methods.knapsack(weights, values, capacity);
+        System.out.println("A solução ótima é: " + result);
     }
 
     public static int fiboRec(int n){
