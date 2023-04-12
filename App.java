@@ -4,18 +4,17 @@ public class App {
 
     public static void main(String args[]) {
 
-        //int valTeste = 4; //4 - 8 - 16 - 32
-        //int[] vetTeste = new int[33];
+        int valTeste = 4; //Teste para todos com tamanho: 4, 8, 16, 32 e para fibo e fiboMem com as variáveis 128, 1000, 10.000
+        long[] vetTeste = new long[33];
 
-        //System.out.println(fiboRec(valTeste));
-        //System.out.println(fibo(valTeste));
-        //System.out.println(fiboMem(vetTeste, valTeste));
-        //knapsack();
-        // System.out.println(knapsack(7));
+        System.out.println(fiboRec(valTeste));
+        System.out.println(fibo(valTeste));
+        System.out.println(fiboMem(vetTeste, valTeste));
 
         String A = "Mola";
-        String B = "Rata";
+        String B = "Bola";
 
+        System.out.println(knapsack(7));
         System.out.println(distDeEdicao(A, B));
     }
 
@@ -30,8 +29,8 @@ public class App {
         }
     }
 
-    public static int fibo(int n){
-        int f[] = new int[n+1];
+    public static long fibo(int n){
+        long f[] = new long[n+1];
         f[0] = 0;
         f[1] = 1;
         for (int i = 2; i <= n; i++) {
@@ -40,14 +39,14 @@ public class App {
         return f[n];
     }
 
-    public static int fiboMem(int f[],int n){
+    public static long fiboMem(long f[],int n){
         for(int i=0; i<=n; i++){
             f[i] = -1;
         }
         return fiboLookUp(f,n);
     }
 
-    public static int fiboLookUp(int f[],int n){
+    public static long fiboLookUp(long f[],int n){
         if (f[n] >= 0) {
             return f[n];
         }
@@ -62,7 +61,7 @@ public class App {
     public static int knapsack(int capacidade) {
         capacidade++;
         ArrayList<Item> itens = new ArrayList<Item>();
-        iinicializarItens(itens);
+        inicializarItens(itens);
 
         int maxTab[][] = new int[itens.size() ][capacidade];
         inicializaMochila(maxTab, capacidade, itens.size());
@@ -74,7 +73,7 @@ public class App {
                         maxTab[i-1][j];
             }
         }
-        return maxTab[itens.size()][capacidade-1];
+        return maxTab[itens.size()-1][capacidade-1];
     }
 
     private static void inicializaMochila(int[][] maxTab, int capacidade,int numLinhas) {
@@ -87,7 +86,7 @@ public class App {
     }
 
 
-    public static void iinicializarItens(ArrayList<Item> itens) {
+    public static void inicializarItens(ArrayList<Item> itens) {
         itens.add(null);
         itens.add(new Item(5, 2));
         itens.add(new Item(2, 4));
