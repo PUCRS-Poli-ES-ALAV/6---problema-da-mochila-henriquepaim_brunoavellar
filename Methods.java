@@ -30,9 +30,12 @@ public class Methods {
         counterInstruction++;
         // Preenchimento da tabela
         for (int i = 0; i <= n; i++) {
+            counterIteration++;
             counterInstruction+=2;
             counterInstruction++;
             for (int j = 0; j <= capacidade; j++) {
+                counterIteration++;
+
                 counterInstruction+=2;
                 if (i == 0 || j == 0) {
                     counterInstruction++;
@@ -123,7 +126,11 @@ public class Methods {
         counterInstruction++;
 
         for(int i = 1; i<itens.size(); i++) {
+            counterIteration++;
+
             for(int j = 1; j<capacidade; j++) {
+                counterIteration++;
+
                 maxTab[i][j] = itens.get(i).getPeso() <= j ?
                         Math.max(maxTab[i-1][j],itens.get(i).getCusto() + maxTab[i-1][j - itens.get(i).getPeso()]) :
                         maxTab[i-1][j];
@@ -135,12 +142,16 @@ public class Methods {
     private static void inicializaMochila(int[][] maxTab, int capacidade,int numLinhas) {
         counterInstruction++;
         for(int i = 0; i<capacidade ; i++) {
+            counterIteration++;
+
             counterInstruction+=2;
             maxTab[0][i] = 0;
             counterInstruction++;
         }
         counterInstruction++;
         for (int i=0; i<numLinhas; i++) {
+            counterIteration++;
+
             counterInstruction+=2;
             maxTab[i][0] = 0;
             counterInstruction++;

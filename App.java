@@ -6,7 +6,8 @@ public class App extends Methods {
 
     public static void main(String args[]) {
 
-        knapSackHBResultados();
+        knapSackInstrucoes();
+        knapSackHBInstruction();
 
     }
 
@@ -30,6 +31,97 @@ public class App extends Methods {
         System.out.println("Knapsack = " + knapsack(pesos1, valores1, capacidade1));
     }
 
+    private static void knapSackIteracoes() {
+        //caso 1
+        int[] pesos = {23, 31, 29, 44, 53, 38, 63, 85, 89, 82};
+        int[] valores = {92, 57, 49, 68, 60, 43, 67, 84, 87, 72};
+        int capacidade = 165;
+
+        zeraContador();
+        System.out.println("------------Caso 1----------");
+        knapsack(pesos, valores, capacidade);
+        System.out.println("Knapsack = " + getCounterIteration());
+
+        //caso 2
+        int[] pesos1 = {56, 59, 80, 64, 75, 17};
+        int[] valores1 = {50, 50, 64, 46, 50, 5};
+        int capacidade1 = 190;
+
+        System.out.println("------------Caso 2----------");
+
+        zeraContador();
+        knapsack(pesos1, valores1, capacidade1);
+        System.out.println("Knapsack = " + getCounterIteration());
+    }
+
+    private static void knapSackHBIteracoes() {
+        //caso 1
+
+        System.out.println("------------Caso 1----------");
+
+        ArrayList<Item> itens = inicializarItensCaso1();
+
+        zeraContador();
+        knapsack(165, itens);
+        System.out.println("KnapsackAutoria = " + getCounterIteration());
+
+        System.out.println("------------Caso 2----------");
+
+        ArrayList<Item> itens2 = inicializarItensCaso2();
+        zeraContador();
+        knapsack(190, itens2);
+        System.out.println("KnapsackAutoria = " +getCounterIteration());
+
+        //System.out.println("------------Caso 1----------");
+
+        // System.out.println("KnapsackHB = " + knapsack(pesos1, valores1, capacidade1));
+    }
+    private static void knapSackHBInstruction() {
+        //caso 1
+
+        System.out.println("------------Caso 1----------");
+
+        ArrayList<Item> itens = inicializarItensCaso1();
+
+        zeraContadorInstrucoes();
+        knapsack(165, itens);
+        System.out.println("KnapsackAutoria = " + getCounterInstruction());
+
+        System.out.println("------------Caso 2----------");
+
+        ArrayList<Item> itens2 = inicializarItensCaso2();
+        zeraContadorInstrucoes();
+        knapsack(190, itens2);
+        System.out.println("KnapsackAutoria = " +getCounterInstruction());
+
+        //System.out.println("------------Caso 1----------");
+
+        // System.out.println("KnapsackHB = " + knapsack(pesos1, valores1, capacidade1));
+    }
+
+    private static void knapSackInstrucoes() {
+        //caso 1
+        int[] pesos = {23, 31, 29, 44, 53, 38, 63, 85, 89, 82};
+        int[] valores = {92, 57, 49, 68, 60, 43, 67, 84, 87, 72};
+        int capacidade = 165;
+
+        zeraContadorInstrucoes();
+        System.out.println("------------Caso 1----------");
+        knapsack(pesos, valores, capacidade);
+        System.out.println("Knapsack = " + getCounterInstruction());
+
+        //caso 2
+        int[] pesos1 = {56, 59, 80, 64, 75, 17};
+        int[] valores1 = {50, 50, 64, 46, 50, 5};
+        int capacidade1 = 190;
+
+        System.out.println("------------Caso 2----------");
+
+        zeraContadorInstrucoes();
+        knapsack(pesos1, valores1, capacidade1);
+        System.out.println("Knapsack = " + getCounterInstruction());
+    }
+
     private static void knapSackHBResultados() {
         //caso 1
 
@@ -47,7 +139,6 @@ public class App extends Methods {
 
        // System.out.println("KnapsackHB = " + knapsack(pesos1, valores1, capacidade1));
     }
-
 
     private static void imprimeFiboEfiboMemIterations() {
         System.out.println("-------------128-----------");
