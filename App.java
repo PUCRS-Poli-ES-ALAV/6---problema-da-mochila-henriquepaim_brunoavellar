@@ -1,7 +1,4 @@
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Formatter;
 
 public class App extends Methods {
     public static long counter = 0;
@@ -25,10 +22,10 @@ public class App extends Methods {
 
         //caso 2
         int[] pesos1 = {56, 59, 80, 64, 75, 17};
-        int[] valores1 = {50, 50, 64, 46, 50, 05};
+        int[] valores1 = {50, 50, 64, 46, 50, 5};
         int capacidade1 = 190;
 
-        System.out.println("------------Caso 1----------");
+        System.out.println("------------Caso 2----------");
 
         System.out.println("Knapsack = " + knapsack(pesos1, valores1, capacidade1));
     }
@@ -52,30 +49,28 @@ public class App extends Methods {
     }
 
 
-
-
-    private static void imprimeFiboEfiboMem() {
+    private static void imprimeFiboEfiboMemIterations() {
         System.out.println("-------------128-----------");
 
 
         zeraContador();
         fibo(128);
-        System.out.println("fibo = " + getCounter());
+        System.out.println("fibo = " + getCounterIteration());
 
         zeraContador();
         fiboMem(new long[129], 128);
-        System.out.println("fiboMem = " + getCounter());
+        System.out.println("fiboMem = " + getCounterIteration());
 
         System.out.println("-------------1000-----------");
 
 
         zeraContador();
         fibo(1000);
-        System.out.println("fibo = " + getCounter());
+        System.out.println("fibo = " + getCounterIteration());
 
         zeraContador();
         fiboMem(new long[1001], 1000);
-        System.out.println("fiboMem = " + getCounter());
+        System.out.println("fiboMem = " + getCounterIteration());
 
 
         System.out.println("-------------10000-----------");
@@ -83,11 +78,47 @@ public class App extends Methods {
 
         zeraContador();
         fibo(10000);
-        System.out.println("fibo = " + getCounter());
+        System.out.println("fibo = " + getCounterIteration());
 
         zeraContador();
         fiboMem(new long[10001], 10000);
-        System.out.println("fiboMem = " + getCounter());
+        System.out.println("fiboMem = " + getCounterIteration());
+    }
+
+    private static void imprimeFiboEfiboMemInstructions() {
+        System.out.println("-------------128-----------");
+
+
+        zeraContadorInstrucoes();
+        fibo(128);
+        System.out.println("fibo = " + getCounterInstruction());
+
+        zeraContadorInstrucoes();
+        fiboMem(new long[129], 128);
+        System.out.println("fiboMem = " + getCounterInstruction());
+
+        System.out.println("-------------1000-----------");
+
+
+        zeraContadorInstrucoes();
+        fibo(1000);
+        System.out.println("fibo = " + getCounterInstruction());
+
+        zeraContadorInstrucoes();
+        fiboMem(new long[1001], 1000);
+        System.out.println("fiboMem = " + getCounterInstruction());
+
+
+        System.out.println("-------------10000-----------");
+
+
+        zeraContadorInstrucoes();
+        fibo(10000);
+        System.out.println("fibo = " + getCounterInstruction());
+
+        zeraContadorInstrucoes();
+        fiboMem(new long[10001], 10000);
+        System.out.println("fiboMem = " + getCounterInstruction());
     }
 
     private static void imprimeFiboEfiboMemResultados() {
@@ -117,15 +148,15 @@ public class App extends Methods {
 
         zeraContador();
         fiboRec(4);
-        System.out.println("fiboRec = " + getCounter());
+        System.out.println("fiboRec = " + getCounterIteration());
 
         zeraContador();
         fibo(4);
-        System.out.println("fibo = " + getCounter());
+        System.out.println("fibo = " + getCounterIteration());
 
         zeraContador();
         fiboMem(new long[5], 4);
-        System.out.println("fiboMem = " + getCounter());
+        System.out.println("fiboMem = " + getCounterIteration());
 
 
         System.out.println("-------------8-----------");
@@ -133,30 +164,30 @@ public class App extends Methods {
 
         zeraContador();
         fiboRec(8);
-        System.out.println("fiboRec = " + getCounter());
+        System.out.println("fiboRec = " + getCounterIteration());
 
         zeraContador();
         fibo(8);
-        System.out.println("fibo = " + getCounter());
+        System.out.println("fibo = " + getCounterIteration());
 
         zeraContador();
         fiboMem(new long[9], 8);
-        System.out.println("fiboMem = " + getCounter());
+        System.out.println("fiboMem = " + getCounterIteration());
 
         System.out.println("-------------16-----------");
 
 
         zeraContador();
         fiboRec(16);
-        System.out.println("fiboRec = " + getCounter());
+        System.out.println("fiboRec = " + getCounterIteration());
 
         zeraContador();
         fibo(16);
-        System.out.println("fibo = " + getCounter());
+        System.out.println("fibo = " + getCounterIteration());
 
         zeraContador();
         fiboMem(new long[17], 16);
-        System.out.println("fiboMem = " + getCounter());
+        System.out.println("fiboMem = " + getCounterIteration());
 
 
         System.out.println("-------------32-----------");
@@ -164,15 +195,79 @@ public class App extends Methods {
 
         zeraContador();
         fiboRec(32);
-        System.out.println("fiboRec = " + getCounter());
+        System.out.println("fiboRec = " + getCounterIteration());
 
         zeraContador();
         fibo(32);
-        System.out.println("fibo = " + getCounter());
+        System.out.println("fibo = " + getCounterIteration());
 
         zeraContador();
         fiboMem(new long[33], 32);
-        System.out.println("fiboMem = " + getCounter());
+        System.out.println("fiboMem = " + getCounterIteration());
+    }
+
+    private static void imprimeTodosinstrucoes() {
+
+        System.out.println("--------------4-----------");
+
+        zeraContadorInstrucoes();
+        fiboRec(4);
+        System.out.println("fiboRec = " + getCounterInstruction());
+
+        zeraContadorInstrucoes();
+        fibo(4);
+        System.out.println("fibo = " + getCounterInstruction());
+
+        zeraContadorInstrucoes();
+        fiboMem(new long[5], 4);
+        System.out.println("fiboMem = " + getCounterInstruction());
+
+
+        System.out.println("-------------8-----------");
+
+
+        zeraContadorInstrucoes();
+        fiboRec(8);
+        System.out.println("fiboRec = " + getCounterInstruction());
+
+        zeraContadorInstrucoes();
+        fibo(8);
+        System.out.println("fibo = " + getCounterInstruction());
+
+        zeraContadorInstrucoes();
+        fiboMem(new long[9], 8);
+        System.out.println("fiboMem = " + getCounterInstruction());
+
+        System.out.println("-------------16-----------");
+
+
+        zeraContadorInstrucoes();
+        fiboRec(16);
+        System.out.println("fiboRec = " + getCounterInstruction());
+
+        zeraContadorInstrucoes();
+        fibo(16);
+        System.out.println("fibo = " + getCounterInstruction());
+
+        zeraContadorInstrucoes();
+        fiboMem(new long[17], 16);
+        System.out.println("fiboMem = " + getCounterInstruction());
+
+
+        System.out.println("-------------32-----------");
+
+
+        zeraContadorInstrucoes();
+        fiboRec(32);
+        System.out.println("fiboRec = " + getCounterInstruction());
+
+        zeraContadorInstrucoes();
+        fibo(32);
+        System.out.println("fibo = " + getCounterInstruction());
+
+        zeraContadorInstrucoes();
+        fiboMem(new long[33], 32);
+        System.out.println("fiboMem = " + getCounterInstruction());
     }
 
     private static void imprimeTodosResultados() {
