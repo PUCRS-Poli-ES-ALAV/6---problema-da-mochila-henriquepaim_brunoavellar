@@ -6,7 +6,8 @@ public class App extends Methods {
 
     public static void main(String args[]) {
 
-        knapSackHBResultados();
+        distEdicaoIteracao();
+        distEdicaoHBIteracao();
 
     }
 
@@ -310,7 +311,212 @@ public class App extends Methods {
 
         System.out.println("fiboMem = " + fiboMem(new long[33], 32));
     }
+
+    private static void distEdicaoResultados(){
+
+        System.out.println("-----------------CASO 1--------------");
+
+        String s1 = "Casablanca";
+        String s2 = "Portentoso";
+
+        System.out.println("DistEdicao = " + distEdicao(s1, s2));
+
+        System.out.println("-----------------CASO 2--------------");
+
+        String texto = "Maven, a Yiddish word meaning accumulator of knowledge, began as an attempt to " +
+                    "simplify the build processes in the Jakarta Turbine project. There were several" + 
+                    " projects, each with their own Ant build files, that were all slightly different." +
+                    "JARs were checked into CVS. We wanted a standard way to build the projects, a clear "+ 
+                    "definition of what the project consisted of, an easy way to publish project information" +
+                    "and a way to share JARs across several projects. The result is a tool that can now be" +
+                    "used for building and managing any Java-based project. We hope that we have created " +
+                    "something that will make the day-to-day work of Java developers easier and generally help " +
+                    "with the comprehension of any Java-based project.";
+        String texto2 = "This post is not about deep learning. But it could be might as well. This is the power of " +
+                    "kernels. They are universally applicable in any machine learning algorithm. Why you might" +
+                    "ask? I am going to try to answer this question in this article." + 
+                    "Go to the profile of Marin Vlastelica Pogančić" + 
+                    "Marin Vlastelica Pogančić Jun";
+
+        System.out.println("DistEdicao = " + distEdicao(texto, texto2));
+    }
+
+    private static void distEdicaoHBResultados(){
+
+        System.out.println("-----------------CASO 1--------------");
+
+        String s1 = "Casablanca";
+        String s2 = "Portentoso";
+
+        System.out.println("DistEdicao HB = " + distEdicaoHB(s1, s2));
+
+        System.out.println("-----------------CASO 2--------------");
+        
+        String texto = "Maven, a Yiddish word meaning accumulator of knowledge, began as an attempt to " +
+                    "simplify the build processes in the Jakarta Turbine project. There were several" + 
+                    " projects, each with their own Ant build files, that were all slightly different." +
+                    "JARs were checked into CVS. We wanted a standard way to build the projects, a clear "+ 
+                    "definition of what the project consisted of, an easy way to publish project information" +
+                    "and a way to share JARs across several projects. The result is a tool that can now be" +
+                    "used for building and managing any Java-based project. We hope that we have created " +
+                    "something that will make the day-to-day work of Java developers easier and generally help " +
+                    "with the comprehension of any Java-based project.";
+        String texto2 = "This post is not about deep learning. But it could be might as well. This is the power of " +
+                    "kernels. They are universally applicable in any machine learning algorithm. Why you might" +
+                    "ask? I am going to try to answer this question in this article." + 
+                    "Go to the profile of Marin Vlastelica Pogančić" + 
+                    "Marin Vlastelica Pogančić Jun";
+
+        System.out.println("DistEdicao HB = " + distEdicaoHB(texto, texto2));
+    }
+
+    private static void distEdicaoInstruction(){
+
+
+        System.out.println("-----------------CASO 1--------------");
+
+        zeraContadorInstrucoes();
+        String s1 = "Casablanca";
+        String s2 = "Portentoso";
+
+        distEdicao(s1, s2);
+
+        System.out.println("DistEdicao Instruction = " + getCounterInstruction());
+
+        System.out.println("-----------------CASO 2--------------");
+
+        zeraContadorInstrucoes();
+        String texto = "Maven, a Yiddish word meaning accumulator of knowledge, began as an attempt to " +
+                    "simplify the build processes in the Jakarta Turbine project. There were several" + 
+                    " projects, each with their own Ant build files, that were all slightly different." +
+                    "JARs were checked into CVS. We wanted a standard way to build the projects, a clear "+ 
+                    "definition of what the project consisted of, an easy way to publish project information" +
+                    "and a way to share JARs across several projects. The result is a tool that can now be" +
+                    "used for building and managing any Java-based project. We hope that we have created " +
+                    "something that will make the day-to-day work of Java developers easier and generally help " +
+                    "with the comprehension of any Java-based project.";
+        String texto2 = "This post is not about deep learning. But it could be might as well. This is the power of " +
+                    "kernels. They are universally applicable in any machine learning algorithm. Why you might" +
+                    "ask? I am going to try to answer this question in this article." + 
+                    "Go to the profile of Marin Vlastelica Pogančić" + 
+                    "Marin Vlastelica Pogančić Jun";
+
+        distEdicao(texto, texto2);
+
+        System.out.println("DistEdicao Instruction = " + getCounterInstruction());
+    }
+
+    private static void distEdicaoHBInstruction(){
+
+
+        System.out.println("-----------------CASO 1--------------");
+
+        zeraContadorInstrucoes();
+        String s1 = "Casablanca";
+        String s2 = "Portentoso";
+
+        distEdicaoHB(s1, s2);
+
+        System.out.println("DistEdicao HB Instruction = " + getCounterInstruction());
+
+        System.out.println("-----------------CASO 2--------------");
+
+        zeraContadorInstrucoes();
+        String texto = "Maven, a Yiddish word meaning accumulator of knowledge, began as an attempt to " +
+                    "simplify the build processes in the Jakarta Turbine project. There were several" + 
+                    " projects, each with their own Ant build files, that were all slightly different." +
+                    "JARs were checked into CVS. We wanted a standard way to build the projects, a clear "+ 
+                    "definition of what the project consisted of, an easy way to publish project information" +
+                    "and a way to share JARs across several projects. The result is a tool that can now be" +
+                    "used for building and managing any Java-based project. We hope that we have created " +
+                    "something that will make the day-to-day work of Java developers easier and generally help " +
+                    "with the comprehension of any Java-based project.";
+        String texto2 = "This post is not about deep learning. But it could be might as well. This is the power of " +
+                    "kernels. They are universally applicable in any machine learning algorithm. Why you might" +
+                    "ask? I am going to try to answer this question in this article." + 
+                    "Go to the profile of Marin Vlastelica Pogančić" + 
+                    "Marin Vlastelica Pogančić Jun";
+
+        distEdicaoHB(texto, texto2);
+
+        System.out.println("DistEdicao HB Instruction = " + getCounterInstruction());
+    }
+
+    private static void distEdicaoIteracao(){
+
+
+        System.out.println("-----------------CASO 1--------------");
+
+        zeraContador();
+        String s1 = "Casablanca";
+        String s2 = "Portentoso";
+
+        distEdicao(s1, s2);
+
+        System.out.println("DistEdicao Iteracao = " + getCounterIteration());
+
+        System.out.println("-----------------CASO 2--------------");
+
+        zeraContador();
+        String texto = "Maven, a Yiddish word meaning accumulator of knowledge, began as an attempt to " +
+                    "simplify the build processes in the Jakarta Turbine project. There were several" + 
+                    " projects, each with their own Ant build files, that were all slightly different." +
+                    "JARs were checked into CVS. We wanted a standard way to build the projects, a clear "+ 
+                    "definition of what the project consisted of, an easy way to publish project information" +
+                    "and a way to share JARs across several projects. The result is a tool that can now be" +
+                    "used for building and managing any Java-based project. We hope that we have created " +
+                    "something that will make the day-to-day work of Java developers easier and generally help " +
+                    "with the comprehension of any Java-based project.";
+        String texto2 = "This post is not about deep learning. But it could be might as well. This is the power of " +
+                    "kernels. They are universally applicable in any machine learning algorithm. Why you might" +
+                    "ask? I am going to try to answer this question in this article." + 
+                    "Go to the profile of Marin Vlastelica Pogančić" + 
+                    "Marin Vlastelica Pogančić Jun";
+
+        distEdicao(texto, texto2);
+
+        System.out.println("DistEdicao Iteracao = " + getCounterIteration());
+    }
+
+    private static void distEdicaoHBIteracao(){
+
+
+        System.out.println("-----------------CASO 1--------------");
+
+        zeraContador();
+        String s1 = "Casablanca";
+        String s2 = "Portentoso";
+
+        distEdicaoHB(s1, s2);
+
+        System.out.println("DistEdicao HB Iteracao = " + getCounterIteration());
+
+        System.out.println("-----------------CASO 2--------------");
+
+        zeraContador();
+        String texto = "Maven, a Yiddish word meaning accumulator of knowledge, began as an attempt to " +
+                    "simplify the build processes in the Jakarta Turbine project. There were several" + 
+                    " projects, each with their own Ant build files, that were all slightly different." +
+                    "JARs were checked into CVS. We wanted a standard way to build the projects, a clear "+ 
+                    "definition of what the project consisted of, an easy way to publish project information" +
+                    "and a way to share JARs across several projects. The result is a tool that can now be" +
+                    "used for building and managing any Java-based project. We hope that we have created " +
+                    "something that will make the day-to-day work of Java developers easier and generally help " +
+                    "with the comprehension of any Java-based project.";
+        String texto2 = "This post is not about deep learning. But it could be might as well. This is the power of " +
+                    "kernels. They are universally applicable in any machine learning algorithm. Why you might" +
+                    "ask? I am going to try to answer this question in this article." + 
+                    "Go to the profile of Marin Vlastelica Pogančić" + 
+                    "Marin Vlastelica Pogančić Jun";
+
+        distEdicaoHB(texto, texto2);
+
+        System.out.println("DistEdicao HB Iteracao = " + getCounterIteration());
+    }
+
+    
 }
+
 
 
 

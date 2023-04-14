@@ -216,6 +216,8 @@ public class Methods {
     }
 
     public static int distEdicao(String A, String B){
+        counterIteration++;
+
         int m = A.length();
         counterInstruction++;
         int n = B.length();
@@ -229,22 +231,26 @@ public class Methods {
 
         counterInstruction++;
         for (int i = 1; i <= m; i++) {
+            counterIteration++;
             counterInstruction+=2;
             matriz[i][0] = matriz[i-1][0] + 1;
             counterInstruction++;
         }
         counterInstruction++;
         for (int j = 1; j <= n; j++) {
+            counterIteration++;
             counterInstruction+=2;
             matriz[0][j] = matriz[0][j-1] + 1;
             counterInstruction++;
         }
         counterInstruction++;
         for (int i = 1; i <= m; i++) {
+            counterIteration++;
             counterInstruction+=2;
 
             counterInstruction++;
             for (int j = 1; j <= n; j++) {
+                counterIteration++;
                 counterInstruction+=2;
                 int custoExtra;
                 counterInstruction++;
@@ -268,17 +274,21 @@ public class Methods {
     }
 
     public static int distEdicaoHB(String primeiraPalavra, String segundaPalavra) {
+        counterIteration++;
+
         int[] dc = new int[segundaPalavra.length() + 1];
         counterInstruction++;
 
         counterInstruction++;
         for (int j = 0; j <= segundaPalavra.length(); j++) {
+            counterIteration++;
             counterInstruction+=2;
             dc[j] = j;
             counterInstruction++;
         }
         counterInstruction++;
         for (int i = 1; i <= primeiraPalavra.length(); i++) {
+            counterIteration++;
             counterInstruction+=2;
             int prev = dc[0];
             counterInstruction++;
@@ -287,6 +297,7 @@ public class Methods {
 
             counterInstruction++;
             for (int j = 1; j <= segundaPalavra.length(); j++) {
+                counterIteration++;
                 counterInstruction+=2;
                 int temp = dc[j];
                 counterInstruction++;
@@ -301,5 +312,4 @@ public class Methods {
         counterInstruction++;
         return dc[segundaPalavra.length()];
     }
-
 }
